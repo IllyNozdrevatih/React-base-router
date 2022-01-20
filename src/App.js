@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import "bootstrap/scss/bootstrap.scss";
+
+import DefaultHeader from "./layout/DefaultHeader";
+import DefaultFooter from "./layout/DefaultFooter";
+import { Route, Routes } from "react-router";
+import Welcome from "./pages/Welcome";
+import UserList from "./pages/UserList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App d-flex flex-column min-vh-100">
+      <div className="mb-auto">
+        <DefaultHeader />
+      </div>
+      <div className="container">
+        <Routes>
+          <Route exact path="/" element={<Welcome />} />
+          <Route path="/user-list" element={<UserList />} />
+        </Routes>
+      </div>
+      <div className="mt-auto">
+        <DefaultFooter />
+      </div>
     </div>
   );
 }
