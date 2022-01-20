@@ -1,6 +1,6 @@
 import "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import UserListPage from "../pages/UserList";
+import { Link } from "react-router-dom";
+import UserListPage from "../pages/UserListPage";
 import Welcome from "../pages/Welcome";
 
 function DefaultHeader() {

@@ -6,7 +6,8 @@ import DefaultHeader from "./layout/DefaultHeader";
 import DefaultFooter from "./layout/DefaultFooter";
 import { Route, Routes } from "react-router";
 import Welcome from "./pages/Welcome";
-import UserList from "./pages/UserList";
+import UserListPage from "./pages/UserListPage";
+import UserPage from "./pages/UserPage";
 
 function App() {
   return (
@@ -17,7 +18,16 @@ function App() {
       <div className="container">
         <Routes>
           <Route exact path="/" element={<Welcome />} />
-          <Route path="/user-list" element={<UserList />} />
+          <Route path="/user-list" element={<UserListPage />} />
+          <Route path="/user-list/:userId" element={<UserPage />} />{" "}
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
         </Routes>
       </div>
       <div className="mt-auto">

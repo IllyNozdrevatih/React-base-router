@@ -3,6 +3,7 @@ import "bootstrap/scss/bootstrap.scss";
 
 import axios from "axios";
 import UserCard from "../components/UserCard";
+import { Link } from "react-router-dom";
 
 function UserListPage() {
   const [userList, setUserList] = useState([]);
@@ -18,8 +19,14 @@ function UserListPage() {
 
   const _LayoutUserList = userList.map((userItem) => {
     return (
-      <div className="col-4 p-3">
-        <UserCard userItem={userItem} />
+      <div className="col-4 p-3" key={userItem.id}>
+        <div className="position-relative">
+          <UserCard userItem={userItem} />
+          <Link
+            className="position-absolute w-100 h-100 link-absolute"
+            to={`/user-list/${userItem.id}`}
+          ></Link>
+        </div>
       </div>
     );
   });
