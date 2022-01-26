@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router";
 import Welcome from "./pages/Welcome";
 import UserListPage from "./pages/UserListPage";
 import UserPage from "./pages/UserPage";
+import Invoices from "./pages/invoices";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Welcome />} />
           <Route path="/user-list" element={<UserListPage />} />
-          <Route path="/user-list/:userId" element={<UserPage />} />{" "}
+          <Route path="/invoices" element={<Invoices />} />
+          <Route path="/user-list/:userId" element={<UserPage />} />
           <Route
             path="*"
             element={

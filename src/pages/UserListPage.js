@@ -25,7 +25,8 @@ function UserListPage() {
           <Link
             className="position-absolute w-100 h-100 link-absolute"
             to={`/user-list/${userItem.id}`}
-          ></Link>
+            key={userItem.id}
+          />
         </div>
       </div>
     );

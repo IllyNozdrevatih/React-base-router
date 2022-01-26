@@ -1,5 +1,5 @@
 import "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import UserListPage from "../pages/UserListPage";
 import Welcome from "../pages/Welcome";
 
@@ -11,14 +11,43 @@ function DefaultHeader() {
           <nav>
             <ul className="list-unstyled d-flex">
               <li>
-                <Link className="px-3" to="/">
+                <NavLink
+                  className="px-3"
+                  to="/"
+                  style={({ isActive }) => {
+                    return {
+                      color: isActive ? "red" : "",
+                    };
+                  }}
+                >
                   Welcome
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link className="px-3" to="/user-list">
+                <NavLink
+                  className="px-3"
+                  to="/invoices"
+                  style={({ isActive }) => {
+                    return {
+                      color: isActive ? "red" : "",
+                    };
+                  }}
+                >
+                  Invoices
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="px-3"
+                  to="/user-list"
+                  style={({ isActive }) => {
+                    return {
+                      color: isActive ? "red" : "",
+                    };
+                  }}
+                >
                   User list
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </nav>
